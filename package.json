@@ -28,6 +28,7 @@
     "gulp-uncss": "^1.0.1",
     "gulp-watch": "^4.2.4",
     "jshint": "^2.7.0",
+    "jshint-stylish": "^1.0.2",
     "node-sass": "^3.1.1",
     "wiredep": "^2.2.2"
   }

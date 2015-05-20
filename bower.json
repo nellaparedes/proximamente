@@ -1,0 +1,20 @@
+{
+  "name": "proximamente",
+  "version": "0.1.0",
+  "homepage": "https://github.com/nellaparedes/proximamente",
+  "authors": [
+    "nellaparedes <nella.paredes@gmail.com>"
+  ],
+  "description": "Template for a coming soon website",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
