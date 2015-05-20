@@ -6,7 +6,27 @@ var gulp    = require('gulp'),
 	stylish = require('jshint-stylish'),
 	inject  = require('gulp-inject'),
 	minifyCss  = require('gulp-minify-css'),
+	concat = require('gulp-concat'),
 	wiredep = require('wiredep').stream;
+
+/*
+gulp.task('inject', function() {
+	var sources = gulp.src(['./app/js/*.js','./app/css/*.css']);
+	return gulp.src('index.html')
+		.pipe(inject(sources, {
+				read: false
+			}))
+		.pipe(gulp.dest('./'));
+});
+
+gulp.task('wiredep', function () {
+	gulp.src('./index.html')
+	.pipe(wiredep({
+		directory: './app/lib'
+	}))
+	.pipe(gulp.dest('./app'));
+});*/
+
 
 gulp.task('jshint', function() {
 return gulp.src('./assets/js/*.js')
@@ -17,7 +37,10 @@ return gulp.src('./assets/js/*.js')
 
 gulp.task('copy',function(){
 	gulp.src('./bower_components/foundation/js/vendor/*.js')
-		.pipe($.copy('./assets/js'));	
+		.pipe($.copy('./assets/js'));
+
+	gulp.src('./bower_components/foundation/js/foundation.min.js')
+		.pipe($.copy('./assets/js'));		
 });
 
 
