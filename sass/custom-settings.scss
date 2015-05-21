@@ -61,7 +61,7 @@ $large-breakpoint:  em-calc(1440);
 $xlarge-breakpoint: em-calc(1920);
 
 @mixin fontface($name, $font){
-	$filepath: "../../fonts/" + $font;
+	$filepath: "../fonts/" + $font;
 
 	@font-face {
 	    font-family: quote($name);
