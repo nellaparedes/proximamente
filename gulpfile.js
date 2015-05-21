@@ -45,5 +45,6 @@ gulp.task('replace',function()
     .pipe(gulp.dest("./"));
 });
 
-gulp.task('default', ['replace', 'sass', 'wiredep', 'inject', 'watch']);
+gulp.task('init',['replace','sass']);
+gulp.task('default', ['wiredep', 'inject', 'watch']);
 
