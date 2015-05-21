@@ -2,10 +2,10 @@
 
 var gulp    = require('gulp'),
 	sass  = require('gulp-sass'),
-	jshint  = require('gulp-jshint'),
-	stylish = require('jshint-stylish'),
 	inject  = require('gulp-inject'),
 	minifyCss  = require('gulp-minify-css'),
+	mustache = require('gulp-mustache'),
+	rename = require('gulp-rename'),
 	wiredep = require('wiredep').stream;
 
 gulp.task('inject', function() {
@@ -16,21 +16,12 @@ gulp.task('inject', function() {
 });
 
 gulp.task('wiredep', function () {
-	gulp.src('./index.html')
+	gulp.src('index.html')
 	.pipe(wiredep({
 		directory: './bower_components'
 	}))
 	.pipe(gulp.dest('./'));
 });
-
-
-gulp.task('jshint', function() {
-return gulp.src('./assets/js/*.js')
-	.pipe(jshint('.jshintrc'))
-	.pipe(jshint.reporter('jshint-stylish'))
-	.pipe(jshint.reporter('fail'));
-});
-
 
 gulp.task('sass', function () {
   gulp.src('./sass/foundation.scss')
@@ -38,7 +29,21 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./assets/css/'));
 });
  
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/*.scss', ['sass']);
+gulp.task('watch', function () {
+  gulp.watch('./sass/*.scss', ['sass','inject']);
+  gulp.watch(['./assets/js/*.js', './gulpfile.js'], ['inject']);
+  gulp.watch(['./bower.json'], ['wiredep']);
 });
+
+var mustache_vars = require('./config.json');
+
+gulp.task('replace',function()
+{
+	gulp.src("./template/index.mustache")
+    .pipe(mustache(mustache_vars))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest("./"));
+});
+
+gulp.task('default', ['replace', 'sass', 'wiredep', 'inject', 'watch']);
 
