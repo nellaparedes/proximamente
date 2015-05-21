@@ -8,29 +8,46 @@
 	<!-- endinject -->
 </head>
 <body>
-	<header class="site-header">
-		<img class="site-logo" src="{{& logo }}"/>
-	</header>
-	<p class="lead">
-		{{ message }}
-	</p>
+	<div class="container">
+		<header class="site-header">
+			<div class="row">
+                <div class="large-5 columns large-centered logo" align="center">
+                    <h1><img class="site-logo" src="{{& logo }}"/></h1>
+                </div>
+            </div>			
+		</header>
+
+		<div class="row">
+        	<div class="large-8 columns large-centered text-center">
+            	<p class="lead">{{ message }}</p>
+            </div>
+        </div>
+
+		<div class="row social text-center">
+			{{#social}}
+				<ul class="inline-list" class="social-list">
+					{{#facebook}}
+					<li><a href="http://www.facebook.com/{{facebook}}">{{facebook}}</a></li>
+					{{/facebook}}
+					{{#twitter}}
+					<li><a href="http://www.twitter.com/{{twitter}}">@{{twitter}}</a></li>
+					{{/twitter}}
+					{{#instagram}}
+					<li><a href="http://www.instagram.com/{{instagram}}">@{{instagram}}</a></li>
+					{{/instagram}}
+				</ul>
+			{{/social}}
+		</div>
+
+		<footer>
+			<p>{{ address }}</p>
+		</footer>
+	</div>
 
 	
-	{{#social}}
-		<ul class="inline-list" class="redes">
-			{{#facebook}}
-			<li><a href="http://www.facebook.com/{{facebook}}">{{facebook}}</a></li>
-			{{/facebook}}
-			{{#twitter}}
-			<li><a href="http://www.twitter.com/{{twitter}}">@{{twitter}}</a></li>
-			{{/twitter}}
-			{{#instagram}}
-			<li><a href="http://www.instagram.com/{{instagram}}">@{{instagram}}</a></li>
-			{{/instagram}}
-		</ul>
-	{{/social}}
 	<!-- bower:js -->
 	<!-- endbower -->
+
 	<!-- inject:js -->
 	<!-- endinject -->
 </body>

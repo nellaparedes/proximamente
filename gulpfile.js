@@ -10,8 +10,8 @@ var gulp    = require('gulp'),
 
 gulp.task('inject', function() {
 	var target = gulp.src('index.html');
-	var sources = gulp.src(['./assets/js/*.js','./assets/css/*.css']);
-	return target.pipe(inject(sources, {read: false}))
+	var sources = gulp.src(['./assets/js/*.js','./assets/css/*.css'], {read: false});
+	return target.pipe(inject(sources, {relative: true}))
 			.pipe(gulp.dest('./'));
 });
 
