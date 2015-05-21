@@ -31,15 +31,6 @@ return gulp.src('./assets/js/*.js')
 	.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('copy',function()
-{
-	gulp.src('./bower_components/foundation/js/vendor/*.js')
-		.pipe(gulp.dest('./assets/js/lib/'));
-
-	gulp.src('./bower_components/foundation/js/foundation.min.js')
-	.pipe(gulp.dest('./assets/js/lib/'));
-});
-
 
 gulp.task('sass', function () {
   gulp.src('./sass/foundation.scss')
