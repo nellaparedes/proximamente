@@ -3,6 +3,7 @@
 <head>
 	<title>{{ title }}</title>
 	<meta name="description" value="{{description}}">
+	<meta name="robots" content="noindex,nofollow">
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes' name='viewport'>
 	<!-- inject:css -->
 	<!-- endinject -->
@@ -12,7 +13,7 @@
 		<header class="site-header">
 			<div class="row">
                 <div class="large-5 columns large-centered logo" align="center">
-                    <h1><img class="site-logo" src="{{& logo }}"/></h1>
+                    <h1><img class="site-logo" src="{{& logo }}" alt="{{ title }}" /></h1>
                 </div>
             </div>			
 		</header>
@@ -27,28 +28,33 @@
 			{{#social}}
 				<ul class="inline-list" class="social-list">
 					{{#facebook}}
-					<li><a href="http://www.facebook.com/{{facebook}}">{{facebook}}</a></li>
+					<li><a class="icon fa-facebook" href="http://www.facebook.com/{{facebook}}">{{facebook}}</a></li>
 					{{/facebook}}
 					{{#twitter}}
-					<li><a href="http://www.twitter.com/{{twitter}}">@{{twitter}}</a></li>
+					<li><a class="icon fa-twitter" href="http://www.twitter.com/{{twitter}}">@{{twitter}}</a></li>
 					{{/twitter}}
 					{{#instagram}}
-					<li><a href="http://www.instagram.com/{{instagram}}">@{{instagram}}</a></li>
+					<li><a class="icon fa-instagram" href="http://www.instagram.com/{{instagram}}">@{{instagram}}</a></li>
 					{{/instagram}}
 				</ul>
 			{{/social}}
 		</div>
 
 		<footer>
-			<p>{{ address }}</p>
+			<div class="row">
+				<div class="large-12 columns text-center">
+					{{#address}}
+					<p>{{ address }}</p>
+					{{/address}}
+					{{#phone}}
+					<p>{{ phone }}</p>
+					{{/phone}}
+				</div>
+			</div>
 		</footer>
 	</div>
-
 	
 	<!-- bower:js -->
 	<!-- endbower -->
-
-	<!-- inject:js -->
-	<!-- endinject -->
 </body>
 </html>

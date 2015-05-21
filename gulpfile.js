@@ -6,6 +6,9 @@ var gulp    = require('gulp'),
 	minifyCss  = require('gulp-minify-css'),
 	mustache = require('gulp-mustache'),
 	rename = require('gulp-rename'),
+	useref     = require('gulp-useref'),
+	uglify     = require('gulp-uglify'),
+	gulpif     = require('gulp-if'),
 	wiredep = require('wiredep').stream;
 
 gulp.task('inject', function() {
@@ -26,13 +29,15 @@ gulp.task('wiredep', function () {
 gulp.task('sass', function () {
   gulp.src('./sass/foundation.scss')
     .pipe(sass().on('error', sass.logError))
+    /*.pipe(rename({suffix: '.min'}))
+    .pipe(minifyCss())*/
     .pipe(gulp.dest('./assets/css/'));
 });
  
 gulp.task('watch', function () {
-  gulp.watch('./sass/*.scss', ['sass','inject']);
-  gulp.watch(['./assets/js/*.js', './gulpfile.js'], ['inject']);
-  gulp.watch(['./bower.json'], ['wiredep']);
+  gulp.watch('./sass/*.scss', ['sass']);
+  gulp.watch(['./template/*.mustache'], ['replace','inject','wiredep']);
+  gulp.watch(['config.json'], ['replace','inject','wiredep']); 
 });
 
 var mustache_vars = require('./config.json');
@@ -44,6 +49,18 @@ gulp.task('replace',function()
     .pipe(rename('index.html'))
     .pipe(gulp.dest("./"));
 });
+
+gulp.task('compress',function() {
+	var assets = useref.assets();
+
+	gulp.src('*.html')
+		.pipe(assets)
+		.pipe(gulpif('*.js', uglify()))
+		.pipe(assets.restore())
+		.pipe(useref())
+		.pipe(gulp.dest('./'));
+});
+
 
 gulp.task('init',['replace','sass']);
 gulp.task('default', ['wiredep', 'inject', 'watch']);

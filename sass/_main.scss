@@ -1,3 +1,4 @@
+@include fontface('Lato Light','lato-light-webfont');
 body{
 	background:#fff url('../img/bg-grey.jpg') no-repeat center center;
 	background-size:cover;
@@ -13,4 +14,10 @@ body{
 {
 	margin-top: 3rem;
 	margin-bottom: 6rem;
+}
+footer
+{
+	p{
+		color: $aluminum;
+	}
 }
