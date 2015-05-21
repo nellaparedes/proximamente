@@ -6,26 +6,22 @@ var gulp    = require('gulp'),
 	stylish = require('jshint-stylish'),
 	inject  = require('gulp-inject'),
 	minifyCss  = require('gulp-minify-css'),
-	concat = require('gulp-concat'),
 	wiredep = require('wiredep').stream;
 
-/*
 gulp.task('inject', function() {
-	var sources = gulp.src(['./app/js/*.js','./app/css/*.css']);
-	return gulp.src('index.html')
-		.pipe(inject(sources, {
-				read: false
-			}))
-		.pipe(gulp.dest('./'));
+	var target = gulp.src('index.html');
+	var sources = gulp.src(['./assets/js/*.js','./assets/css/*.css']);
+	return target.pipe(inject(sources, {read: false}))
+			.pipe(gulp.dest('./'));
 });
 
 gulp.task('wiredep', function () {
 	gulp.src('./index.html')
 	.pipe(wiredep({
-		directory: './app/lib'
+		directory: './bower_components'
 	}))
-	.pipe(gulp.dest('./app'));
-});*/
+	.pipe(gulp.dest('./'));
+});
 
 
 gulp.task('jshint', function() {
@@ -35,19 +31,20 @@ return gulp.src('./assets/js/*.js')
 	.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('copy',function(){
+gulp.task('copy',function()
+{
 	gulp.src('./bower_components/foundation/js/vendor/*.js')
-		.pipe($.copy('./assets/js'));
+		.pipe(gulp.dest('./assets/js/lib/'));
 
 	gulp.src('./bower_components/foundation/js/foundation.min.js')
-		.pipe($.copy('./assets/js'));		
+	.pipe(gulp.dest('./assets/js/lib/'));
 });
 
 
 gulp.task('sass', function () {
   gulp.src('./sass/foundation.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./assets/css/'));
 });
  
 gulp.task('sass:watch', function () {

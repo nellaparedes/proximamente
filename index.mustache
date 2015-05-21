@@ -4,7 +4,8 @@
 	<title>{{ title }}</title>
 	<meta name="description" value="{{description}}">
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes' name='viewport'>
-	<link rel="stylesheet" href="/assets/css/main.css">	
+	<!-- inject:css -->
+	<!-- endinject -->
 </head>
 <body>
 	<header class="site-header">
@@ -13,10 +14,9 @@
 	<p class="lead">
 		{{ message }}
 	</p>
-	<script src="/assets/js/modernizr.js"></script>
-	<script src="/assets/js/jquery.js"></script>
-	<script src="/assets/js/jquery.cookie.js"></script>
-	<script src="/assets/js/fastclick.js"></script>
-	<script src="/assets/js/foundation.js"></script>
+	<!-- bower:js -->
+	<!-- endbower -->
+	<!-- inject:js -->
+	<!-- endinject -->
 </body>
 </html>
