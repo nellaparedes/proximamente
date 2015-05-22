@@ -1,8 +1,6 @@
-@include fontface('Lato Light','lato-light-webfont');
 body{
 	background:#fff url('../img/bg-grey.jpg') no-repeat center center;
 	background-size:cover;
-	color:#000;
 }
 .container{
 	h1{
@@ -18,6 +16,6 @@ body{
 footer
 {
 	p{
-		color: $aluminum;
+		color: $grey;
 	}
 }

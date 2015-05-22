@@ -5,6 +5,7 @@ var gulp    = require('gulp'),
 	sass  = require('gulp-sass'),
 	inject  = require('gulp-inject'),
 	minifyCss  = require('gulp-minify-css'),
+	uncss = require('gulp-uncss'),
 	mustache = require('gulp-mustache'),
 	rename = require('gulp-rename'),
 	useref     = require('gulp-useref'),
@@ -20,8 +21,6 @@ if(gutil.env.folder)
 {
 	folder = gutil.env.folder;
 }
-
-
 
 gulp.task('replace',function()
 {
@@ -65,15 +64,28 @@ gulp.task('compress',function(cb) {
     	.pipe(gulp.dest('./' + folder + '/img'))
     	.on('end', cb).on('error', cb);
 
+    gulp.src(['./assets/fonts/*.*'])
+    	.pipe(gulp.dest('./' + folder + '/fonts'));	
+
 	gulp.src('./index.html')
 		.pipe(assets)
-		.pipe(gulpif('*.css', minifyCss({keepSpecialComments : 0, rebase: false})))
+		/*.pipe(gulpif('*.css', minifyCss({keepSpecialComments : 0, rebase: false})))*/
 		.pipe(gulpif('*.js', uglify()))
 		.pipe(assets.restore())
 		.pipe(useref())
 		.pipe(gulp.dest('./' + folder));
 });
 
+gulp.task('optimize', ['compress'], function() {
+	
+	return gulp.src('./' + folder + '/js/main.min.css')
+		.pipe(uncss({
+			html: ['./' + folder + '/index.html']
+		}))
+		.pipe(minifyCss({keepSpecialComments : 0}))
+		.pipe(gulp.dest('./' + folder + '/js'));
+	
+});
 
 gulp.task('default', ['generate']);
-
+gulp.task('build', ['optimize']);
