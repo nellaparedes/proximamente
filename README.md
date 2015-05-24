@@ -14,6 +14,21 @@ To set up the application for the first time
 * npm install
 * bower install
 
+# Variables available
+
+* name (name of your company)
+* title (meta title)
+* description (meta description)
+* logo (URL four your logo)
+* message (coming soon message for your clients)
+* phone
+* address
+* email
+* social
+	* twitter
+	* facebook
+	* instagram
+
 # Generating your coming soon page
 After setting the config.json:
 
@@ -23,13 +38,21 @@ Generate your coming soon page in the /app folder.
 If you want to specify a theme for your site:
 * gulp --theme black
 
-*gulp watch
+
 Listen for changes in sass, config and mustache files
 
+*gulp watch
+
+Generate your dist application in a /build folder. 
+
 *gulp build 
-Generate your dist application in a /build folder. You can specify another folder by calling 
+
+You can specify another folder by calling 
+
 *gulp build --folder RELATIVE_PATH_FOR_YOUR_APP
 
-*gulp clean
 To leave your source clean :)
+
+*gulp clean
+
 
