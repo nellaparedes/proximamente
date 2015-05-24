@@ -7,3 +7,7 @@ $header-font-color: #fff;
 
 @import "foundation";
 @import "main"; 
+
+body{	
+	@include bodybg($bgimg,$bgcolor);
+}
