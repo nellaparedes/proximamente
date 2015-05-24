@@ -1,10 +1,11 @@
 {
-	"title": "Idanimo Digital",
+	"title": "El Universo",
 	"description": "Agencia de Marketing Digital en Ecuador. Estrategias de marketing digital, SEO, SEM, desarrollo web y aplicaciones móviles.",
-	"logo": "http://www.idanimo.com/wp-content/themes/idanimo/images/logo-idanimo.png",
+	"logo": "",
 	"message": "Próximamente nuestro nuevo y mejorado sitio web",
 	"phone": "593 9 94778996",
 	"address": "Urdesa central. Acacias 1018 y Jiguas. Guayaquil, Ecuador.",
+	"email": "webmaster@eluniverso.com",
 	"social":{
 		"twitter": "IdanimoDigital",
 		"facebook": "idanimo.digital",

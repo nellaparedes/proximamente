@@ -27,7 +27,7 @@ build/Release
 node_modules
 bower_components
 build
-assets/js
-assets/css
-assets/img
-index.html
+app/assets/js
+app/assets/css
+app/assets/img
+app/index.html

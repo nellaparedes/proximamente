@@ -3,7 +3,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @import "normalize";
 @import "functions";
-@import "custom-settings";
+@import "settings";
 
 @import "../bower_components/foundation/scss/foundation/components/grid";
 @import "../bower_components/foundation/scss/foundation/components/block-grid";
@@ -44,4 +44,3 @@
 @import "../bower_components/foundation/scss/foundation/components/visibility";*/
 
 @import "fonts"; 
-@import "main"; 

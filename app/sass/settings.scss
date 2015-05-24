@@ -1,0 +1,26 @@
+@import "../bower_components/foundation/scss/foundation/functions";
+
+$include-html-classes: true;
+$include-html-global-classes: $include-html-classes;
+
+// Fonts
+$font-family-sans-serif: "robotobold", Helvetica, Roboto, Arial, sans-serif;
+$font-family-serif: "Lato Light", Cambria, "Times New Roman", Times, serif;
+$theme: default;
+
+
+// Color names
+$white       : #FFFFFF;
+$smoke       : #EEEEEE;
+$grey        : #666666;
+$black       : #000000;
+
+// Global styles
+$body-bg: $white;
+$body-font-family: $font-family-serif;
+$header-font-family: $font-family-sans-serif;
+$h1-font-size: rem-calc(52);
+
+@include fontface('robotobold','roboto-bold-webfont', 'robotobold');
+@include fontface('Lato Light','lato-light-webfont', 'latolight');
+@include fontface('fontello','fontello','fontello');

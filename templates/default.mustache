@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+	<meta name="description" value="{{description}}">
+	<meta name="robots" content="noindex,nofollow">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes' name='viewport'>
+	<!-- build:css css/main.min.css -->
+	<!-- inject:css -->
+	<!-- endinject -->
+	<!-- endbuild -->
+</head>
+<body>
+	<div class="container">
+		<header class="site-header">
+			<div class="row">
+                <div class="large-6 columns large-centered logo" align="center">
+                    <h1>
+                    	{{#logo}}
+                    	<img class="site-logo" src="{{& logo }}" alt="{{ title }}" />
+                    	<span>
+                    	{{/logo}}
+                    	{{ title }}
+						{{#logo}}
+                    	</span>
+                    	{{/logo}}
+                    </h1>
+                </div>
+            </div>
+			<div class="row">
+	        	<div class="large-8 columns large-centered text-center">
+	            	<p class="lead">{{ message }}</p>
+	            </div>
+	        </div>	
+		</header>
+
+		<section class="content">
+			<div class="row social text-center">
+				{{#social}}
+				<ul class="inline-list" class="social-list">
+					{{#facebook}}
+					<li><a class="icon icon-facebook" href="http://www.facebook.com/{{facebook}}" target="_blank">{{facebook}}</a></li>
+					{{/facebook}}
+					{{#twitter}}
+					<li><a class="icon icon-twitter" href="http://www.twitter.com/{{twitter}}" target="_blank">@{{twitter}}</a></li>
+					{{/twitter}}
+					{{#instagram}}
+					<li><a class="icon icon-instagram" href="http://www.instagram.com/{{instagram}}" target="_blank">@{{instagram}}</a></li>
+					{{/instagram}}
+				</ul>
+				{{/social}}
+			</div>
+		</section>
+
+		<footer class="site-footer">
+			<div class="row">
+				<div class="large-12 columns text-center">
+					{{#address}}
+					<p>{{ address }}</p>
+					{{/address}}
+					<p>
+					{{#phone}}
+					tel: {{ phone }}&nbsp;
+					{{/phone}}
+
+					{{#email}}
+					email: <a href="mailto:{{email}}">{{ email }}</a>&nbsp;
+					{{/email}}
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- build:js js/main.min.js -->
+	<!-- bower:js -->
+	<!-- endbower -->
+	<!-- endbuild -->
+</body>
+</html>
