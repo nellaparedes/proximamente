@@ -35,7 +35,7 @@ After setting the config.json:
 Generate your coming soon page in the /app folder. 
 * `gulp`
 
-If you want to specify a theme for your site:
+If you want to specify a theme for your site (themes avilable are in demo folder):
 * `gulp --theme black`
 
 
