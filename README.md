@@ -5,9 +5,9 @@ You can customize the look and feel of your page using sass and Foundation 5.
 
 # Requirements
 The following libaries are required for this app
-* Node.js
-* Gulp npm install -g gulp
-* Bower npm install -g bower
+* `Node.js`
+* `Gulp` npm install -g gulp
+* `Bower` npm install -g bower
 
 # First time install
 To set up the application for the first time
@@ -33,26 +33,26 @@ To set up the application for the first time
 After setting the config.json:
 
 Generate your coming soon page in the /app folder. 
-* gulp
+* `gulp`
 
 If you want to specify a theme for your site:
-* gulp --theme black
+* `gulp --theme black`
 
 
 Listen for changes in sass, config and mustache files
 
-*gulp watch
+*`gulp watch`
 
 Generate your dist application in a /build folder. 
 
-*gulp build 
+*`gulp build`
 
 You can specify another folder by calling 
 
-*gulp build --folder RELATIVE_PATH_FOR_YOUR_APP
+*`gulp build --folder RELATIVE_PATH_FOR_YOUR_APP`
 
 To leave your source clean :)
 
-*gulp clean
+*`gulp clean`
 
 
