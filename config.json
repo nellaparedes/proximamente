@@ -1,15 +1,15 @@
 {
-	"name": "El Universo",
-	"title": "El Universo | Noticias del Ecuador y el mundo",
-	"description": "Agencia de Marketing Digital en Ecuador. Estrategias de marketing digital, SEO, SEM, desarrollo web y aplicaciones móviles.",
+	"name": "Company name",
+	"title": "Company  name | Company slogan",
+	"description": "Your company meta description.",
 	"logo": "",
 	"message": "Próximamente nuestro nuevo y mejorado sitio web",
 	"phone": "593 9 94778996",
-	"address": "Urdesa central. Acacias 1018 y Jiguas. Guayaquil, Ecuador.",
-	"email": "webmaster@eluniverso.com",
+	"address": "Your company address. Guayaquil, Ecuador.",
+	"email": "hello@example.com",
 	"social":{
-		"twitter": "IdanimoDigital",
-		"facebook": "idanimo.digital",
+		"twitter": "mycompany",
+		"facebook": "mycompany",
 		"instagram": ""
 	}
 }
