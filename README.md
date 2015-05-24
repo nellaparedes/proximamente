@@ -6,8 +6,8 @@ You can customize the look and feel of your page using sass and Foundation 5.
 # Requirements
 The following libaries are required for this app
 * Node.js
-* Gulp
-* Bower
+* Gulp npm install -g gulp
+* Bower npm install -g bower
 
 # First time install
 To set up the application for the first time
