@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nellaparedes/proximamente",
   "devDependencies": {
+    "bower": "^1.4.1",
     "gulp": "^3.8.11",
     "gulp-clean": "^0.3.1",
     "gulp-if": "^1.2.5",
