@@ -1,5 +1,5 @@
 # Coming Soon Template
-This is an experimental code for testing gulp, sass and mustache to generate custom Coming Soon Pages. You just have to set your company's data in config.json file and then generate your page specifying one of the available themes.
+This is an experimental code for testing gulp, sass and mustache to generate custom Coming Soon Pages. You just have to set your company's data in config.json file and then generate your page specifying one of the [available themes](https://github.com/nellaparedes/proximamente/tree/master/demo).
 
 You can customize the look and feel of your page using sass and Foundation 5.
 
@@ -43,7 +43,7 @@ You can specify another folder by calling
 
 *`gulp build --folder RELATIVE_PATH_FOR_YOUR_APP`
 
-If you want to specify a theme for your site (themes avilable are in demo folder):
+If you want to specify a theme for your site (themes avilable are in [demo folder](https://github.com/nellaparedes/proximamente/tree/master/demo)):
 * `gulp --theme black`
 
 
