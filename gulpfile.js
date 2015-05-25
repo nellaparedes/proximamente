@@ -89,7 +89,7 @@ gulp.task('watch', function () {
   gulp.watch(['config.json'], ['generate']); 
 });
 
-gulp.task('compress',function(cb) {
+gulp.task('compress',['generate'], function(cb) {
 	var assets = useref.assets();
     
 	gulp.src(['./app/assets/img/*.png','./app/assets/img/*.jpg','./app/assets/img/*.gif','./app/assets/img/*.jpeg'])
@@ -125,11 +125,13 @@ gulp.task('clean', function ()
 	gulp.src(['./app/assets/js/*.js', './app/assets/css/*.css','./app/assets/img/*.*', './app/index.html'], {read: false})
     .pipe(clean());
 });
- 
-gulp.task('scripts', ['clean-scripts'], function () {
-  gulp.src('app/scripts/*.js')
-    .pipe(gulp.dest('app/tmp'));
+
+gulp.task('fullbuild', ['optimize'], function () 
+{
+	gulp.src(['./app/assets/js/*.js', './app/assets/css/*.css','./app/assets/img/*.*', './app/index.html'], {read: false})
+    .pipe(clean());
 });
 
-gulp.task('default', ['generate']);
+gulp.task('default', ['fullbuild']);
 gulp.task('build', ['optimize']);
+gulp.task('test', ['generate']);
