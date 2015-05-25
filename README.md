@@ -7,7 +7,7 @@ You can customize the look and feel of your page using sass and Foundation 5.
 The following libaries are required for this app
 
 * [Node.js](http://nodejs.org)
-* [Gulp](http://gulpjs.com/) `[sudo] npm install -g gulp`
+* [Gulp](http://gulpjs.com/): Run `[sudo] npm install -g gulp`
 * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
 # First time install
@@ -41,7 +41,7 @@ Generate your coming soon page in a /build folder.
 
 You can specify another folder by calling 
 
-*`gulp build --folder RELATIVE_PATH_FOR_YOUR_APP`
+* `gulp build --folder RELATIVE_PATH_FOR_YOUR_APP`
 
 If you want to specify a theme for your site (themes avilable are in [demo folder](https://github.com/nellaparedes/proximamente/tree/master/demo)):
 * `gulp --theme black`
