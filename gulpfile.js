@@ -65,15 +65,20 @@ gulp.task('wiredep', ['replace'], function () {
 	.pipe(gulp.dest('./app/'));
 });
 
-gulp.task('generate', ['wiredep','sass'], function() {
+gulp.task('generate', ['wiredep','sass'], function(cb) {
 
-	gulp.src(['./themes/' + theme + '.jpg'])
-    	.pipe(gulp.dest('./app/assets/img/'));
+	if( fs.existsSync('./themes/' + theme + '.jpg')) 
+	{
+		gulp.src(['./themes/' + theme + '.jpg'])
+	    	.pipe(gulp.dest('./app/assets/img/'));		
+	}
 
 	var target = gulp.src('./app/index.html');
 	var sources = gulp.src(['./app/assets/js/*.js','./app/assets/css/*.css'], {read: false});
-	return target.pipe(inject(sources, {relative: true}))
-			.pipe(gulp.dest('./app/'));
+
+	target.pipe(inject(sources, {relative: true}))
+		.pipe(gulp.dest('./app/'))
+		.on('end', cb).on('error', cb);
 });
 
 gulp.task('sass', function () {
@@ -94,8 +99,7 @@ gulp.task('compress',['generate'], function(cb) {
     
 	gulp.src(['./app/assets/img/*.png','./app/assets/img/*.jpg','./app/assets/img/*.gif','./app/assets/img/*.jpeg'])
     	.pipe(imageop({optimizationLevel: 5,progressive: true,interlaced: true}))
-    	.pipe(gulp.dest('./' + folder + '/img'))
-    	.on('end', cb).on('error', cb);
+    	.pipe(gulp.dest('./' + folder + '/img'));
 
     gulp.src(['./app/assets/fonts/*.*'])
     	.pipe(gulp.dest('./' + folder + '/fonts'));	
@@ -106,29 +110,29 @@ gulp.task('compress',['generate'], function(cb) {
 		.pipe(gulpif('*.js', uglify()))
 		.pipe(assets.restore())
 		.pipe(useref())
-		.pipe(gulp.dest('./' + folder));
+		.pipe(gulp.dest('./' + folder))
+    	.on('end', cb).on('error', cb);
 });
 
-gulp.task('optimize', ['compress'], function() {
+gulp.task('optimize', ['compress'], function(cb) {
 	
-	return gulp.src('./' + folder + '/css/main.min.css')
+	gulp.src('./' + folder + '/css/main.min.css')
 		.pipe(uncss({
 			html: ['./' + folder + '/index.html']
 		}))
 		.pipe(minifyCss({rebase: false}))
-		.pipe(gulp.dest('./' + folder + '/css'));
+		.pipe(gulp.dest('./' + folder + '/css'))
+    	.on('end', cb).on('error', cb);
 	
 });
 
-gulp.task('clean', function () 
-{
+gulp.task('clean', function (cb){
 	gulp.src(['./app/assets/js/*.js', './app/assets/css/*.css','./app/assets/img/*.*', './app/index.html'], {read: false})
     .pipe(clean());
 });
 
-gulp.task('fullbuild', ['optimize'], function () 
-{
-	gulp.src(['./app/assets/js/*.js', './app/assets/css/*.css','./app/assets/img/*.*', './app/index.html'], {read: false})
+gulp.task('fullbuild', ['optimize'], function (){
+	return gulp.src(['./app/assets/js/*.js', './app/assets/css/*.css','./app/assets/img/*.*', './app/index.html'], {read: false})
     .pipe(clean());
 });
 
