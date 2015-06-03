@@ -35,24 +35,6 @@
 		</header>
 
 		<section class="content">
-			<div class="row social text-center">
-				{{#social}}
-				<ul class="inline-list" class="social-list">
-					{{#facebook}}
-					<li><a class="icon icon-facebook" href="{{& facebook}}" target="_blank">&nbsp;</a></li>
-					{{/facebook}}
-					{{#twitter}}
-					<li><a class="icon icon-twitter" href="{{& twitter}}" target="_blank"></a></li>
-					{{/twitter}}
-					{{#instagram}}
-					<li><a class="icon icon-instagram" href="{{& instagram}}" target="_blank"></a></li>
-					{{/instagram}}
-				</ul>
-				{{/social}}
-			</div>
-		</section>
-
-		<footer class="site-footer">
 			<div class="row">
 				<div class="large-12 columns text-center">
 					{{#address}}
@@ -68,6 +50,24 @@
 					{{/email}}
 					</p>
 				</div>
+			</div>
+		</section>
+
+		<footer class="site-footer">
+			<div class="row social text-center">
+				{{#social}}
+				<ul class="inline-list" class="social-list">
+					{{#facebook}}
+					<li><a class="icon icon-facebook" href="{{& facebook}}" target="_blank">&nbsp;</a></li>
+					{{/facebook}}
+					{{#twitter}}
+					<li><a class="icon icon-twitter" href="{{& twitter}}" target="_blank"></a></li>
+					{{/twitter}}
+					{{#instagram}}
+					<li><a class="icon icon-instagram" href="{{& instagram}}" target="_blank"></a></li>
+					{{/instagram}}
+				</ul>
+				{{/social}}
 			</div>
 		</footer>
 	</div>

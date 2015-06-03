@@ -1,0 +1,14 @@
+{
+	"name": "Company name",
+	"title": "Company  name | Company slogan",
+	"logo": "",
+	"message": "Próximamente nuestro nuevo y mejorado sitio web",
+	"phone": "593 9 94778996",
+	"address": "Your company address. Guayaquil, Ecuador.",
+	"email": "hello@example.com",
+	"social":{
+		"twitter": "mycompany",
+		"facebook": "mycompany",
+		"instagram": ""
+	}
+}
