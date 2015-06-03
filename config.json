@@ -1,15 +1,14 @@
 {
-	"name": "Ecovitali",
-	"title": "Ecovitali | División control de plagas",
-	"description": "Diseñamos sistemas de prevención, control y monitoreo de todo tipo de plagas urbanas en ambientes industriales y domésticos brindando el asesoramiento fitosanitario a su personal encargado.",
-	"logo": "img/ecovitali-logo-negro-division.png",
-	"message": "Próximamente nuestro nuevo y mejorado sitio web.",
-	"phone": "045033570 - 042682178 - 0993706085",
-	"address": "Kennedy Norte, Av. Miguel H. Alcívar y Calle Eleodoro Arboleda Esquina. Edif Plaza Center Oficina 305. Guayaquil, Ecuador.",
-	"email": "info@ecovitali.net",
+	"name": "Company name",
+	"title": "Company  name | Company slogan",
+	"logo": "",
+	"message": "Próximamente nuestro nuevo y mejorado sitio web",
+	"phone": "593 9 94778996",
+	"address": "Your company address. Guayaquil, Ecuador.",
+	"email": "hello@example.com",
 	"social":{
-		"twitter": "https://www.twitter.com/ECOVITALl",
-		"facebook": "https://www.facebook.com/pages/EcoVitali/413242365395749",
-		"instagram": "http://instagram.com/ecovitali"
+		"twitter": "mycompany",
+		"facebook": "mycompany",
+		"instagram": ""
 	}
 }
